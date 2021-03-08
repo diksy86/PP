@@ -282,9 +282,9 @@ switch (city) {
 */
 console.log("Zadatak 8");
 
-var a = 2;
-var b = 5;
-var opperator = "+";
+var a = 5;
+var b = 0;
+var opperator = "/";
 var result = 0;
 
 switch (opperator) {
