@@ -298,7 +298,7 @@ switch (opperator) {
         result = a * b;
         break;
     case "/":
-        if(a == 0 || b == 0)
+        if(a === 0 || b === 0)
             result = 0;
         else 
             result = a / b;
