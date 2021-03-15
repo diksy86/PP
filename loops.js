@@ -14,12 +14,13 @@ for (a = 0; a <= 15; a++) {
 2. Write a program to sum the multiples of 3 and 5 under 1000.
 */
 console.log("Zadatak 2");
+
 var sum = 0;
-for (var x = 0; x < 1000; x++)
+for (var i = 0; i < 1000; i++)
 {
-    if (x % 3 === 0 || x % 5 === 0)
+    if (i % 3 === 0 && i % 5 === 0)
     {
-       sum += x;
+       sum += i;
     }
 }
 console.log(sum);
@@ -71,10 +72,8 @@ var a = [
 ];
 
 for (i = 0; i < a.length; i++) {
-    var subArray = a[i];
-
-    for (j = 0; j < subArray.length; j++) {
-        console.log( subArray[j] );
+    for (j = 0; j < a[i].length; j++) {
+        console.log( a[i][j] );
     }
 }
 

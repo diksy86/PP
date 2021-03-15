@@ -9,7 +9,7 @@ console.log("Zadatak 1");
 
 var e = 22;
 var a = [5, -4.2, 3, 7];
-var isFound = false;
+var isFound = false; //we need boolean starting value in case array is empty because the initial check will not be performed
 
 for (var i = 0; i < a.length; i++) {
     if (a[i] === e) {
@@ -45,8 +45,8 @@ Output: -1, 3
 console.log("Zadatak 3");
 
 var a = [4, 2, 2, -1, 6];
-var min = false;
-var index = -1;
+var min = 0;
+var index = -1; //has to be invalid for initial check because if the check never occurs, the opperation has to return a value
 
 for (var i = 0; i < a.length; i++) {
     if (i === 0 || min > a[i]) {
@@ -66,16 +66,21 @@ Output: 2
 console.log("Zadatak 4");
 
 var a = [4, 2, 2, -1, 6];
-var min = false;
-var min2 = false;
+if (a.length < 2) {  //check if we have enough elements for comparison
+    consol.log("Error, array has less than 2 elements");
+} else {
+    var min; //declared for use in loop, no value assigned because it will be assigned in the first iteration
+    var min2;
 
-for (var i = 0; i < a.length; i++) {
-    if (i === 0) {
-        min = a[i];
-    } else if ( a[i] < min ) {
-        min2 = min;
-        min = a[i];
+    for (var i = 0; i < a.length; i++) {
+        if (i === 0) { //if first iteration set min
+            min = a[i];
+        } else if ( a[i] <= min ) {  // in case we had three same numbers, we need to have <= in order to set min2
+            min2 = min;
+            min = a[i];
+        }
     }
+    console.log(min2);
 }
 
 /*
@@ -105,24 +110,24 @@ Output: The array isn’t symmetric.
 console.log("Zadatak 6");
 
 var a = [3, 4, 5, 4, 3];
-var end = a.length - 1;
-var isSym = false;
+var end = a.length - 1; //last index in array a
+var isSym = false; //by default, we assume until proven wrong
 
 for (var start = 0; start < a.length; start++) {
-    if(start == end) { //neparan
-        break;
-    }
-    if(start > end) { //proslo kroz ceo niz
+    //here we check if we should even continue checking - did we reach the halfway or more in the array
+    //which would signify that all the values were same so far
+    if (start >=end) { 
+        // we looped through half the array or more, there is no need to continue checking
         isSym = true;
-        break;
+        break; // leave the loop
     }
-
-   if(a[start] !== a[end]) { //ako nisu iste vrednosti
-        isSym = false;
-        break
-   }
-   end--; //smanjujemo index za po jedan
-}
+    if (a[start] !== a[end]) { 
+        //values do not match, symmetry is not true, no need to continue checking
+        //since isSym is false by default, we don't need to set it to false here
+        break; // leave the loop
+    }
+    end--; //we need to decrease end by 1 for the next iteration
+} 
 console.log(isSym ? "symetrical" : "not symetrical");
 
 
@@ -143,6 +148,7 @@ for (var i = 0; i < a.length; i++) {
     c.push(a[i], b[i]);
 }
 console.log(c);
+
 /*
 8. Write a program that concatenates two arrays.
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
@@ -184,6 +190,7 @@ console.log(a);
 
 
 
+
 /*
 10. Write a program that inserts a given element e on the given position p in the array a. If
 the value of the position is greater than the array length, print the error message.
@@ -191,7 +198,10 @@ Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
 Output: [2, -2, 33, 78, 12, 5, 8]
 */
 console.log("Zadatak 10");
-var e = 78, p = 3, a = [2, -2, 33, 12, 5, 8];
+
+var e = 78;
+var p = 3;
+var a = [2, -2, 33, 12, 5, 8];
 
 if (p > a.length) {
     console.log("Error");

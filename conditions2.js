@@ -66,6 +66,7 @@ Output: odd, even, odd
 console.log("Zadatak A");
 var a = 3;
 console.log( a % 2 ? "odd" : "even");
+//if returns something - odd, if not -even
 var b = 4;
 console.log( b % 2 ? "odd" : "even");
 var c = 9;
