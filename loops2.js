@@ -158,15 +158,16 @@ console.log("Zadatak 8");
 
 var a = [4, 5, 6, 2];
 var b = [3, 8, 11, 9];
-var c = [];
-for (var i = 0; i < a.length; i++) {
-    c.push(a[i]); //ubacujemo a u c
-}
-for (var i = 0; i < b.length; i++) {
-    c.push(b[i]); //ubacujemo b u c
-}
 
-console.log(c);
+for (var i = 0; i < b.length; i++) {
+    a.push(b[i]); // adding b[i] at the end of a
+}
+//same thing can be achieved with concat method like this
+// a.concat(b);  which would add elementes of array b at the end of array a
+
+console.log(a);
+
+
 /*
 9. Write a program that deletes a given element e from the array a.
 Input: e = 2, a = [4, 6, 2, 8, 2, 2]
@@ -179,8 +180,14 @@ var a = [4, 6, 2, 8, 2, 2];
 var e = 2;
 var i = a.length - 1;
 
+// We are starting from the back of the array because deleting elements will change lenghth of the array
+//and order of the elements
+
 while (i >= 0) {
     if (a[i] === e) {
+        // Using splice, we are deleting current element from array a
+        //by providing second argument which tells splice how many items from start index (first argument)
+        //to delete
         a.splice(i, 1);
     }
     i--;
@@ -206,6 +213,6 @@ var a = [2, -2, 33, 12, 5, 8];
 if (p > a.length) {
     console.log("Error");
 } else {
-    a.splice(p, 0, e); //gde ubacujemo, koliko brisemo, sta stavljamo
+    a.splice(p, 0, e); // *where to start, *how many to delete, *what to insert
 }
 console.log(a);
