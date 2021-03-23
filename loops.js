@@ -76,7 +76,6 @@ for (i = 0; i < a.length; i++) {
         console.log( a[i][j] );
     }
 }
-
 /*
 6. Write a program that outputs the sum of squares of the first 20 numbers.
 */

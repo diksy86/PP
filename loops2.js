@@ -144,9 +144,20 @@ var a = [4, 5, 6, 2];
 var b = [3, 8, 11, 9];
 var c = [];
 
-for (var i = 0; i < a.length; i++) {
+/*for (var i = 0; i < a.length; i++) {
     c.push(a[i], b[i]);
+}*/
+
+var maxlength = a.length > b.length ? a.length : b.length
+for (var i = 0; i < maxlength; i++) {
+	if (a[i]) {
+		c[c.length] = a[i];
+	}
+	if (b[i]) {
+		c[c.length] = b[i];
+	}
 }
+
 console.log(c);
 
 /*
@@ -158,15 +169,25 @@ console.log("Zadatak 8");
 
 var a = [4, 5, 6, 2];
 var b = [3, 8, 11, 9];
-
+/*ar c = a.slice(); //slice clones array if no arguments are provided
 for (var i = 0; i < b.length; i++) {
-    a.push(b[i]); // adding b[i] at the end of a
+    c.push(b[i]); // adding b[i] at the end of a
 }
 //same thing can be achieved with concat method like this
 // a.concat(b);  which would add elementes of array b at the end of array a
 
-console.log(a);
-
+console.log(c);*/
+var c = [];
+var y = 0;
+for (x=0; x<a.length+b.length; x++) {
+    if (x<a.length) {
+        c[x] = a[x]; 
+    } else {
+        c[x] = b[y]; 
+        y++;
+    }
+}
+console.log(c);
 
 /*
 9. Write a program that deletes a given element e from the array a.
@@ -178,7 +199,7 @@ console.log("Zadatak 9");
 
 var a = [4, 6, 2, 8, 2, 2];
 var e = 2;
-var i = a.length - 1;
+/*var i = a.length - 1;
 
 // We are starting from the back of the array because deleting elements will change lenghth of the array
 //and order of the elements
@@ -193,8 +214,15 @@ while (i >= 0) {
     i--;
 }
 
-console.log(a);
+console.log(a);*/
+var r = [];
+for (var i = 0; i < a.length; i++) {
+    if (a[i] !== e) {
+        r[r.length] = a[i];
 
+    }
+}
+console.log(b);
 
 
 
@@ -210,9 +238,18 @@ var e = 78;
 var p = 3;
 var a = [2, -2, 33, 12, 5, 8];
 
-if (p > a.length) {
+/*if (p > a.length) {
     console.log("Error");
 } else {
     a.splice(p, 0, e); // *where to start, *how many to delete, *what to insert
+}*/
+
+var newArray = [];
+for (var i = 0; i < a.length; i++) {
+	if (i === p) {
+		newArray[p] = e;
+	}
+	newArray[newArray.length] = a[i];
 }
+console.log(newArray);
 console.log(a);
