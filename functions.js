@@ -173,6 +173,8 @@ console.log("Zadatak 10");
 
 
 function appear (string) {
+    var sum = 0;
+    var b = 'a';
     for (i = 0; i < string.length; i++) {
         if (string[i] === b ) {
             sum +=1
