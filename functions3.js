@@ -21,6 +21,8 @@ function insertString(string1,string2, position){
 }
 console.log(insertString("My random string", "JS", 2));
 
+
+
 /*
 2.Write a program to join all elements of the array into a string skipping elements that are undefined, null, NaN or Infinity.
 
@@ -40,6 +42,8 @@ function joinElements(arr) {
     return result;
 }
 console.log(joinElements([NaN, 0, 15, false, -22, '', undefined, 47, null]));
+
+
 /*
 3.Write a program to filter out falsy values from the array.
 
@@ -59,6 +63,8 @@ function filterFalsy (arr) {
     return result;
 }
 console.log(filterFalsy([NaN, 0, 15, false, -22, '', undefined, 47, null]));
+
+
 /*
 4.Write a function that reverses a number. The result must be a number.
 
@@ -81,6 +87,8 @@ function reverse(num){
     return newString;
 }
 console.log(reverse(123456));
+
+
 /*
 5.Write a function to get the last element of an array. Passing a parameter 'n' will return the last 'n' elements of the array.
 
@@ -99,6 +107,8 @@ function nLastElements(arr, n){
     return newArr;
     }
 console.log(nLastElements([7,9,0,-2],7));
+
+
 /*
 6.Write a function to create a specified number of elements with pre-filled numeric value array.
 
@@ -116,6 +126,7 @@ function createArray(ele, num) {
     return result;
 }
 console.log(createArray("none", 6));
+
 
 /*
 7.Write a function that says whether a number is perfect.
@@ -147,10 +158,6 @@ function isPerfect(num) {
     }
 }
 isPerfect(8);
-
-
-
-
 
 
 /*
@@ -185,6 +192,8 @@ function findInString(str, word) {
     return counter;
 }
 console.log(findInString("The quick fox f fox brown fox", "fox"));
+
+
 /*
 9.Write a function to hide email address.
 
@@ -205,6 +214,8 @@ function hideEmail(email) {
     return result;
 }
 console.log(hideEmail("me@bgit.rs"));
+
+
 /*
 10. Write a program to find the most frequent item of an array.
 
