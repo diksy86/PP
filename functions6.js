@@ -247,11 +247,39 @@ console.log(returnElements([1, 3, 5, 7, 8, 9, 10]));
 
 */
 console.log("Zadatak 12");
+
+function findAverage(arguments) {
+    var sum = 0;
+    for (var i = 0; i < arguments.length; i ++) {
+        sum += arguments[i];
+    }
+    return (sum / arguments.length);
+}
+console.log(findAverage([2, 4, 3, 3, 8]));
 /*
 13. Write a function to find all the numbers greater than the average.
 
 */
 console.log("Zadatak 13");
+
+function findGreaterThanAverage(arguments) {
+    var sum = 0;
+    var avg = 0;
+    var numbers = [];
+    for (var i =0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    avg = sum / arguments.length;
+    
+    for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] > avg) {
+            numbers[numbers.length] = arguments[i];
+        }
+    }
+    
+    return numbers;
+}
+console.log(findGreaterThanAverage([2, 4, 3, 3, 8]));
 /*
 14. The body mass index (BMI) is the ratio of the weight of a person (in kilograms) to the square of the height (in meters). Write a function that takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
 Starvation: less than 15
@@ -264,6 +292,39 @@ Morbidly obese: greater than or equal to 40
 
 */
 console.log("Zadatak 14");
+
+function calculateBMI(weight, height) {
+    var bmi = (weight / ((height * height) / 10000));
+    if (bmi < 15) {
+        console.log(bmi);
+        return "Starvation";
+    }
+    else if (bmi >= 15 && bmi < 17.5) {
+        console.log(bmi);
+        return "Anorexic";
+    }
+    else if (bmi >= 17.5 && bmi < 18.5) {
+        console.log(bmi);
+        return "Underweight"
+    }
+    else if (bmi >= 18.5 && bmi < 25) {
+        console.log(bmi);
+        return "Ideal"
+    }
+    else if (bmi >= 25 && bmi < 30) {
+        console.log(bmi);
+        return "Overweight"
+    }
+    else if (bmi >= 30 && bmi < 40) {
+        console.log(bmi);
+        return "Obese";
+    }
+    else {
+        console.log(bmi);
+        return "Morbidly obese"
+    }
+}
+console.log(calculateBMI(70, 155));
 /*
 15.Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
 
@@ -278,3 +339,36 @@ For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 
 */
 console.log("Zadatak 15");
+
+function printList (arr) {
+    var padding = " ";
+    var border = "*";
+    var output = "";
+    var longest = arr[0].length;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].length > longest) {
+            longest = arr[i].length;
+        }
+    }
+    for (var i = -1; i <= arr.length; i++) {
+        //print top/bottom
+        if (i === -1 || i === arr.length) {
+            for(var j = 0; j < longest + 2 * (padding.length + border.length); j++) {
+                output += border;
+            }
+            output += "\n";
+        }
+        else {
+            var str = arr[i];
+
+            output += border + padding;
+            output += str;
+            for(var j = 0; j < longest - str.length; j++) {
+                output += " ";
+            }
+            output += padding + border + "\n";
+        }
+    }
+    return output;
+}
+console.log(printList(["Hello", "World", "in", "a", "frame"]));
