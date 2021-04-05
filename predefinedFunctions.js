@@ -67,8 +67,7 @@ console.log("Zadatak 4");
 function countIntegers(arr) {
     counter = 0;
     for (i = 0; i < arr.length; i++) {
-        var temp = parseInt[arr[i]];
-            if (isFinite(temp)) {
+            if (typeof arr[i] === "number" && !isNaN(arr[i]) && arr[i] % 1 === 0) {
                 counter ++;
             }
         
@@ -87,8 +86,7 @@ console.log("Zadatak 5");
 function countFloat(arr) {
     counter = 0;
     for (i = 0; i < arr.length; i++) {
-        var temp = parseFloat[arr[i]];
-            if (isFinite(temp)) {
+            if (typeof arr[i] === "number" && !isNaN(arr[i]) && arr[i] % 1 !== 0) {
                 counter ++;
             }
         
