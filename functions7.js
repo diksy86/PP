@@ -29,6 +29,8 @@ Bonus: Add an additional argument to the function that takes the conversion rate
 */
 
 function calculateDogAge(dogAge, humanAge) {
+    //TODO: Fix this, read problem again.
+    
     d_age = dogAge * 7;
     h_age = humanAge / 7;
     return "Dog age in human years is " + d_age + " and Human age in dog years is " + h_age;
@@ -48,7 +50,7 @@ Bonus: Accept floating point values for amount per day, and round the result to 
 
 function calculateSupply(age, amount) {
     var maxAge = 90;
-    var supply = ((maxAge - age) * 365 * parseFloat(amount));
+    var supply = Math.round( (maxAge - age) * 365 * parseFloat(amount) );
     var output = "You will need " + supply + " candies to last you until the ripe old age of " + maxAge;
     return output;
 }
