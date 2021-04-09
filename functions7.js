@@ -28,14 +28,14 @@ Call the function three times with different sets of values.
 Bonus: Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge(dogAge, humanAge) {
-    //TODO: Fix this, read problem again.
-    
-    d_age = dogAge * 7;
-    h_age = humanAge / 7;
-    return "Dog age in human years is " + d_age + " and Human age in dog years is " + h_age;
+
+function calculateDogAge(age, cRate) {
+    var dogAge = age * cRate;
+    return "Your doggie is " + dogAge + " years old in dog years!";
 }
-console.log(calculateDogAge(5, 50));
+console.log(calculateDogAge(5, 7));
+console.log(calculateDogAge(2, 7));
+console.log(calculateDogAge(3.5, 7));
 
 /*
 3.Ever wonder how much a "lifetime supply" of your favorite snack is? Wonder no more!
