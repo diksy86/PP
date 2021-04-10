@@ -80,11 +80,11 @@ console.log("Zadatak 5");
 
 function multiplicationTable(from, to) {
     var table = [];
-    for(var i = from; i <= to; i++) {
-        for(var j = from; j <= to; j++) {
-            if(i !== j) {
-                table[table.length] = i + "x" + j + "=" + i * j;
-            }
+    for (var i = from; i <= to; i++) {
+        for (var j = from; j <= to; j++) {
+            
+            table[table.length] = i + "x" + j + "=" + i * j;
+            
         }
     }
     return table;
@@ -111,7 +111,7 @@ function findMaxElement(arr) {
     var result = [];
     var max = arr[0];
     for (var i = 0; i < arr.length; i++) {
-        if (typeof arr[i] === "number" && arr[i] > max) {
+        if (typeof arr[i] === "number" && arr[i] >= max) {
             max = arr[i];
             result[result.length] = arr[i];
         }
@@ -177,11 +177,11 @@ function findMostFreq(arr) {
     var item = arr[0];
     var most = 1;
     var processed_items = []; //stores unique elements from arr that are already processed
-    for(var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
 
         var isProcessed = false;
         //loop through processed_items to check if we already processed this item.
-        for(var z = 0; z < processed_items.length; z++) {
+        for (var z = 0; z < processed_items.length; z++) {
             if(processed_items[z] === arr[i]) {
                 console.log('DEBUG: Item "' + arr[i] + '" is found in processed_items, index ' + i);
                 //if current item is found in processed_items, set isProcessed to true
@@ -200,12 +200,12 @@ function findMostFreq(arr) {
         processed_items[processed_items.length] = arr[i];
 
         var ocurrences = 0;
-        for(var j = 0; j < arr.length; j++) {
-            if(arr[j] === arr[i])
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[j] === arr[i])
             ocurrences++;
         }
         console.log('DEBUG: Item "' + arr[i] + '" has ' + ocurrences + ' ocurrences.');
-        if(ocurrences > most) {
+        if (ocurrences > most) {
             item = arr[i];
             most = ocurrences;
         }
@@ -231,17 +231,17 @@ function returnElements(arr){
         }
         else if (arr.length % 2 !== 0) {
             output[output.length] = arr[0];
-            var mid = (arr.length - 1) / 2;
-            if (mid <= arr[i]) {
+            var mid = parseInt(arr.length / 2);
+            
                 output[output.length] = arr[mid];
-            }
+            
             output[output.length] = arr[arr.length - 1];
             return output;
             
         }
     }
 }
-console.log(returnElements([1, 3, 5, 7, 8, 9, 10]));
+console.log(returnElements([1, 2, 3, 4, 5, 7, 8, 9, 10]));
 /*
 12. Write a function to find the average of N elements. Make the function flexible to receive dynamic number or parameters.
 
@@ -266,7 +266,7 @@ function findGreaterThanAverage(arguments) {
     var sum = 0;
     var avg = 0;
     var numbers = [];
-    for (var i =0; i < arguments.length; i++) {
+    for (var i = 0; i < arguments.length; i++) {
         sum += arguments[i];
     }
     avg = sum / arguments.length;
@@ -296,31 +296,24 @@ console.log("Zadatak 14");
 function calculateBMI(weight, height) {
     var bmi = (weight / ((height * height) / 10000));
     if (bmi < 15) {
-        console.log(bmi);
         return "Starvation";
     }
     else if (bmi >= 15 && bmi < 17.5) {
-        console.log(bmi);
         return "Anorexic";
     }
     else if (bmi >= 17.5 && bmi < 18.5) {
-        console.log(bmi);
         return "Underweight"
     }
     else if (bmi >= 18.5 && bmi < 25) {
-        console.log(bmi);
         return "Ideal"
     }
     else if (bmi >= 25 && bmi < 30) {
-        console.log(bmi);
         return "Overweight"
     }
     else if (bmi >= 30 && bmi < 40) {
-        console.log(bmi);
         return "Obese";
     }
     else {
-        console.log(bmi);
         return "Morbidly obese"
     }
 }
