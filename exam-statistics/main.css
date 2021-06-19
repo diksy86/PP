@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Courier Prime', monospace;
+}
+.container {
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+}
+.statistics {
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(./assets/header.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    border: 1px solid #ddd;
+    
+    
+}
+.passed {
+    float: left;
+    margin-left: 150px;
+    
+}
+.failed {
+    float: right;
+    margin-right: 150px;
+}
+#title {
+    padding-top: 50px;
+}
+.button {
+    padding: 5px;
+    color: #92D3EC;
+    background-color: #fff;
+    border: 1px solid #92D3EC;
+    width: 50px;
+    height: 30px;
+
+}
+.button:hover {
+    background-color: #92D3EC;
+    color: #fff;
+}
+.button:active {
+    background-color: #92D3EC;
+    box-shadow: 0 3px #92D3EC;
+    transform: scale(.9);
+  }
+.add-new {
+    margin-top: 20px;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    
+}
+#total-students {
+    border: 1px solid black;
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 3px;
+}
+#passed {
+    background-color: #92D3EC;
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    margin: 5px auto;
+    padding: 3px;
+}
+#failed {
+    background-color: #F2A5A7;
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    margin: 5px auto;
+    padding: 3px;
+}
+.subject {
+    background-color: #fff;
+    border: 1px solid #92D3EC;
+    width: max-content;
+    height: 30px;
+}
+.name {
+    background-color: #fff;
+    border: 1px solid #92D3EC;
+    width: 250px;
+    height: 30px;
+}
+.grade {
+    background-color: #fff;
+    border: 1px solid #92D3EC;
+    width: max-content;
+    height: 30px;
+}
