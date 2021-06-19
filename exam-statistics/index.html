@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="./main.css" rel="stylesheet">
+    <title>Exam Statistics</title>
+</head>
+<body>
+    <h1>Exam statistics</h1>
+    <div class="container">
+        <section class="statistics">
+            <p id="title">Exam statistics June</p>
+            <p id="total-students">Total Students:</p>
+            <p id="passed">PASSED</p>
+            <p id="failed">FAILED</p>
+        </section>
+        <section class="add-new">
+            <select id="subject" class="subject">
+                <option>Select Subject</option>
+                <option>JavaScript</option>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>Pyton</option>
+                <option>PHP</option>
+                <option>C#</option>
+            </select>
+            <input type="text" id="studentName" class="name">
+            <select id="grade" class="grade">
+                <option>Select Grade</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            <input type="button" value="ADD" id="add" class="button">
+        </section>
+        <p class="passed">Passed</p>
+        <ul id="passed-list"></ul>
+        <p class="failed"></p>
+        <ul id="failed-list">Failed</ul>
+    </div>
+    <script src="./js/subject.js"></script>
+    <script src="./js/student.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/exam.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
